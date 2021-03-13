@@ -18,6 +18,8 @@ package com.example.androiddevchallenge.ui.theme
 import androidx.compose.ui.unit.dp
 
 val grid = 8.dp
+val grid2 = 16.dp
+val grid3 = 24.dp
 val grid4 = 32.dp
 val screenPadding = 16.dp
 val buttonHeight = 72.dp
