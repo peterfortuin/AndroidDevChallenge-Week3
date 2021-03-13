@@ -57,7 +57,6 @@ import com.example.androiddevchallenge.ui.theme.MySootheTheme
 import com.example.androiddevchallenge.ui.theme.grid
 import com.example.androiddevchallenge.ui.theme.grid2
 import com.example.androiddevchallenge.ui.theme.grid3
-import com.example.androiddevchallenge.ui.theme.grid4
 import com.example.androiddevchallenge.ui.theme.screenPadding
 
 @Composable
@@ -66,7 +65,10 @@ fun HomeScreen() {
         Scaffold(
             bottomBar = {
                 FabPosition.Center
-                BottomAppBar(elevation = 8.dp, backgroundColor = MaterialTheme.colors.background) {
+                BottomAppBar(
+                    elevation = 8.dp, backgroundColor = MaterialTheme.colors.background,
+                    modifier = Modifier.padding(bottom = 48.dp)
+                ) {
                     Row(horizontalArrangement = Arrangement.SpaceAround) {
                         IconButton(onClick = {}, modifier = Modifier.weight(1f)) {
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -91,7 +93,8 @@ fun HomeScreen() {
             floatingActionButtonPosition = FabPosition.Center,
             isFloatingActionButtonDocked = true
         ) {
-            Column(verticalArrangement = Arrangement.Top,
+            Column(
+                verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .verticalScroll(rememberScrollState())
@@ -101,9 +104,9 @@ fun HomeScreen() {
                     onValueChange = {},
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = screenPadding, end = screenPadding, top = grid),
+                        .padding(start = screenPadding, end = screenPadding, top = 56.dp),
                     leadingIcon = {
-                        Icon(Icons.Default.Search, contentDescription = "Search")
+                        Icon(Icons.Default.Search, contentDescription = "Search", modifier = Modifier.size(18.dp))
                     }
                 )
 
@@ -149,9 +152,10 @@ fun HomeScreen() {
 
 @Composable
 fun FavoritesCollections() {
-    Row(modifier = Modifier
-        .padding(start = grid, end = grid2)
-        .horizontalScroll(rememberScrollState())
+    Row(
+        modifier = Modifier
+            .padding(start = grid, end = grid2)
+            .horizontalScroll(rememberScrollState())
     ) {
         Column() {
             FavoritesCard(image = R.drawable.short_mantras, text = "Short mantras")
@@ -176,7 +180,7 @@ fun FavoritesCard(@DrawableRes image: Int, text: String) {
             .size(192.dp, 56.dp),
         backgroundColor = MaterialTheme.colors.surface
     ) {
-        Row() {
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Image(
                 painterResource(image),
                 contentDescription = "Image of $text",
@@ -187,7 +191,6 @@ fun FavoritesCard(@DrawableRes image: Int, text: String) {
             Text(
                 text = text,
                 modifier = Modifier
-                    .paddingFromBaseline(top = grid4)
                     .padding(start = grid2),
                 style = MaterialTheme.typography.h3
             )
@@ -197,9 +200,10 @@ fun FavoritesCard(@DrawableRes image: Int, text: String) {
 
 @Composable
 fun AlignYourBody() {
-    Row(modifier = Modifier
-        .padding(start = grid, end = grid2)
-        .horizontalScroll(rememberScrollState())
+    Row(
+        modifier = Modifier
+            .padding(start = grid, end = grid2)
+            .horizontalScroll(rememberScrollState())
     ) {
         Circles(R.drawable.inversions, "Inversions")
         Circles(R.drawable.quick_yoga, "Quick yoga")
@@ -212,9 +216,10 @@ fun AlignYourBody() {
 
 @Composable
 fun AlignYourMind() {
-    Row(modifier = Modifier
-        .padding(start = grid, end = grid2)
-        .horizontalScroll(rememberScrollState())
+    Row(
+        modifier = Modifier
+            .padding(start = grid, end = grid2)
+            .horizontalScroll(rememberScrollState())
     ) {
         Circles(R.drawable.meditate, "Meditate")
         Circles(R.drawable.with_kids, "With kids")
@@ -233,7 +238,7 @@ fun Circles(@DrawableRes image: Int, text: String) {
             contentDescription = "Image of $text",
             modifier = Modifier
                 .size(88.dp)
-                .clip(CircleShape) ,
+                .clip(CircleShape),
             contentScale = ContentScale.Crop
         )
 
@@ -271,4 +276,3 @@ fun FavoritesCollectionsPreview() {
         }
     }
 }
-

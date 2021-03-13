@@ -30,6 +30,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androiddevchallenge.R
@@ -47,10 +48,15 @@ fun WelcomeScreen(darkTheme: Boolean = isSystemInDarkTheme(), navigateToLoginScr
         Image(
             painterResource(backgroundResource),
             contentDescription = "Background",
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.FillBounds
         )
 
-        Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxSize()
+        ) {
             val logoResource = if (darkTheme) R.drawable.ic_dark_logo else R.drawable.ic_light_logo
             Image(
                 painterResource(logoResource),
