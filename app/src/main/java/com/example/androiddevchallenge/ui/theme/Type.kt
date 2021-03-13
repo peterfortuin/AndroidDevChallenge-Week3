@@ -20,7 +20,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 
@@ -39,37 +38,37 @@ val typography = Typography(
         fontFamily = KulimPark,
         fontWeight = FontWeight.Light,
         fontSize = 28.sp,
-        letterSpacing = 1.15.em
+        letterSpacing = 1.15.sp
     ),
     h2 = TextStyle(
         fontFamily = KulimPark,
         fontWeight = FontWeight.Normal,
         fontSize = 15.sp,
-        letterSpacing = 1.15.em,
+        letterSpacing = 1.15.sp,
     ),
     h3 = TextStyle(
         fontFamily = Lato,
         fontWeight = FontWeight.Bold,
         fontSize = 14.sp,
-        letterSpacing = 0.em
+        letterSpacing = 0.sp
     ),
     body1 = TextStyle(
         fontFamily = Lato,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
-        letterSpacing = 0.em
+        letterSpacing = 0.sp
     ),
     button = TextStyle(
         fontFamily = Lato,
         fontWeight = FontWeight.Bold,
         fontSize = 14.sp,
-        letterSpacing = 1.15.em
+        letterSpacing = 1.15.sp
     ),
     caption = TextStyle(
         fontFamily = KulimPark,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
-        letterSpacing = 1.15.em
+        letterSpacing = 1.15.sp
     ),
 
 )

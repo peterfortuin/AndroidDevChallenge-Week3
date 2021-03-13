@@ -48,7 +48,7 @@ fun MySootheApp() {
     val actions = remember(navController) { NavActions(navController) }
 
     NavHost(navController, startDestination = "welcome") {
-        composable("welcome") { WelcomeScreen(actions.navigateToLoginScreen) }
+        composable("welcome") { WelcomeScreen(navigateToLoginScreen = actions.navigateToLoginScreen) }
         composable("login") { LoginScreen(actions.navigateToHomeScreen) }
         composable("home") { HomeScreen() }
     }
