@@ -49,7 +49,7 @@ fun MySootheApp() {
 
     NavHost(navController, startDestination = "welcome") {
         composable("welcome") { WelcomeScreen(navigateToLoginScreen = actions.navigateToLoginScreen) }
-        composable("login") { LoginScreen(actions.navigateToHomeScreen) }
+        composable("login") { LoginScreen(navigateToHomeScreen = actions.navigateToHomeScreen) }
         composable("home") { HomeScreen() }
     }
 }

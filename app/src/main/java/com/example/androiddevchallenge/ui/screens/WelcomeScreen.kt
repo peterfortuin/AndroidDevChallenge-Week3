@@ -42,9 +42,8 @@ import com.example.androiddevchallenge.ui.theme.screenPadding
 
 @Composable
 fun WelcomeScreen(darkTheme: Boolean = isSystemInDarkTheme(), navigateToLoginScreen: () -> Unit) {
-    val backgroundResource = if (darkTheme) R.drawable.ic_dark_welcome else R.drawable.ic_light_welcome
-
     Surface(color = MaterialTheme.colors.background) {
+        val backgroundResource = if (darkTheme) R.drawable.ic_dark_welcome else R.drawable.ic_light_welcome
         Image(
             painterResource(backgroundResource),
             contentDescription = "Background",
@@ -62,7 +61,6 @@ fun WelcomeScreen(darkTheme: Boolean = isSystemInDarkTheme(), navigateToLoginScr
                 onClick = {},
                 modifier = Modifier
                     .fillMaxWidth()
-
                     .padding(start = screenPadding, end = screenPadding, top = grid4, bottom = grid)
                     .height(buttonHeight)
             ) {
